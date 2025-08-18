@@ -1,0 +1,160 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.hand {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 350px;
+}
+
+.default {
+  color: white;
+  background-color: white;
+}
+
+.card {
+  position: absolute;
+  height: 300px;
+  width: 150px;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 15px;
+  color: black;
+  z-index: 5;
+}
+
+.card:hover.default {
+  animation-name: selectedCard;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.card:hover.goldenApple {
+  animation-name: selectedCard-goldenApple;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.onPedestal {
+  animation: none;
+}
+
+.btn {
+  z-index: 9999;
+}
+
+.pedestal {
+  overflow: hidden;
+  width: 150px;
+  height: 300px;
+  border: 1px solid white;
+  color: black;
+  background-color: white;
+  border-radius: 15px;
+
+}
+
+.pedestal.default {
+  animation-name: lightning;
+  box-shadow: 0px 0px 20px #FF3D94;
+  animation-duration: 5s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+.pedestal.goldenApple {
+  animation-name: lightning-goldenApple;
+  animation-duration: 5s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes lightning {
+  from {
+    box-shadow: 0px 0px 20px #FF3D94;
+  }
+
+  50% {
+    box-shadow: 0px 0px 20px black;
+  }
+
+  to {
+    box-shadow: 0px 0px 20px #FF3D94;
+  }
+}
+
+@keyframes lightning-goldenApple {
+  from {
+    box-shadow: 0px 0px 20px #00ff00;
+  }
+
+  50% {
+    box-shadow: 0px 0px 20px black;
+  }
+
+  to {
+    box-shadow: 0px 0px 20px #00ff00;
+  }
+}
+
+@keyframes selectedCard {
+  from {
+    transform: initial translateY(0);
+  }
+
+  to {
+    transform: translateY(-50px);
+    background-color: #FF3D94;
+  }
+}
+
+@keyframes selectedCard-goldenApple {
+  from {
+    transform: initial translateY(0);
+  }
+
+  to {
+    transform: translateY(-50px);
+    background-color: #00ff00;
+  }
+}
