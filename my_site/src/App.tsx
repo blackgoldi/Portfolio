@@ -40,7 +40,7 @@ function App() {
   }
 
   function handleResetCard(e) {
-    console.log(e);
+    console.log(e, 123);
     setCards([]);
   }
 
