@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 
 function App() {
   const [multiply, setMultiply] = useState(0.45);
-  const [openCard, setOpenCard] = useState(null);
+  const [openCard, setOpenCard] = useState("");
   const [style, setStyle] = useState("default");
 
   const [cards, setCards] = useState([
@@ -33,12 +33,14 @@ function App() {
   // }, []);
 
   function handleAddCard(e) {
+    console.log(e);
     const newCards = [...cards];
     newCards.push({ id: cards.length + 1, value: "Карточка" });
     setCards(newCards);
   }
 
   function handleResetCard(e) {
+    console.log(e);
     setCards([]);
   }
 
@@ -55,18 +57,25 @@ function App() {
     e.target.classList.remove("selected");
   }
 
-  function handleDragOver(e) {
+  function handleDragOver(e: { preventDefault: () => void }) {
     e.preventDefault();
-    setOpenCard(document.querySelector(".selected")?.children[0].textContent);
+    const selected = document.querySelector(".selected");
+    if (selected) {
+      setOpenCard(selected.children[0]?.textContent ?? "");
+    }
   }
 
   function handleStartDragFromPedestal(e) {
     console.log(e.target);
   }
 
-  function handleDragFromPedestal(e) {}
+  function handleDragFromPedestal(e) {
+    console.log(e);
+  }
 
-  function handleDragLeave(e) {}
+  function handleDragLeave(e) {
+    console.log(e);
+  }
 
   function handleStyleChange(e) {
     setStyle(e.target.getAttribute("value"));
