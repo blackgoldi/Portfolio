@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo", //КЕШ для повторных сборок проекта
+    "target": "ES2022", //версия 
+    "useDefineForClassFields": true, //совместимость 
+    "lib": ["ES2022", "DOM", "DOM.Iterable"], //доступные библиотеки для работы
+    "module": "ESNext", //IMPORT/EXPORT
+    "skipLibCheck": true, //Пропуск ts в библиотеках
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true, //Импорт ts разрешений
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true, //Отсутствие проверки компиляции, только проверка типов
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true, //Строгий режим
+    "noUnusedLocals": true, //Ошибка на неиспользуемые переменные
+    "noUnusedParameters": true, //Ошибка на неиспользуемые параметры
+    "erasableSyntaxOnly": true, //
+    "noFallthroughCasesInSwitch": true, // 
+    "noUncheckedSideEffectImports": true //Проверка на sideEffect при импорте файлов
+  },
+  "include": ["src"]
+}
